@@ -415,6 +415,11 @@ img, video {
 .hero-bullet-icon {
   font-size: 1.25rem;
   color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.hero-bullet-item:hover .hero-bullet-icon {
+  transform: scale(1.1);
 }
 
 .hero-bullet-text {
@@ -595,6 +600,11 @@ img, video {
 .service-icon {
   font-size: 1.5rem;
   color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.service-header:hover .service-icon {
+  transform: scale(1.1);
 }
 
 .service-name {
@@ -673,8 +683,8 @@ img, video {
 
 .equipment-subtitle {
   color: #4b5563;
-  font-size: 1rem;
-  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -693,6 +703,11 @@ img, video {
 .equipment-icon {
   font-size: 1.25rem;
   color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.equipment-item:hover .equipment-icon {
+  transform: scale(1.1);
 }
 
 .equipment-text {
@@ -780,6 +795,13 @@ img, video {
   margin-bottom: 0.75rem;
 }
 
+.experience-subtitle {
+  color: #4b5563;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
 .experience-text {
   color: #4b5563;
 }
@@ -788,25 +810,46 @@ img, video {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .stat-item {
   padding: 1rem;
-  background-color: #f9fafb;
+  background-color: #f1f5f9;
 }
 
 .stat-label {
   color: #6b7280;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-icon {
+  font-size: 1.25rem;
+  color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+  transform: scale(1.1);
+}
+
+.experience-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
 
 .stat-value {
   color: #1e1e1e;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .experience-highlights {
@@ -825,6 +868,11 @@ img, video {
 .highlight-icon {
   font-size: 1.25rem;
   color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon {
+  transform: scale(1.1);
 }
 
 .highlight-text {
@@ -838,6 +886,33 @@ img, video {
 .experience-figure {
   width: 100%;
   overflow: hidden;
+}
+
+.experience-gallery {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-slides {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-image.active {
+  opacity: 1;
+  position: relative;
 }
 
 .experience-image-desktop {
@@ -919,6 +994,13 @@ img, video {
   font-weight: 700;
 }
 
+.about-subtitle {
+  color: #4b5563;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
 .about-text {
   color: #4b5563;
   margin-top: 0.5rem;
@@ -990,6 +1072,11 @@ img, video {
 .contact-icon {
   font-size: 1.25rem;
   color: #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.1);
 }
 
 .contact-link-phone:hover {
@@ -1002,6 +1089,10 @@ img, video {
 
 .contact-address {
   color: #4b5563;
+}
+
+.contact-address:hover {
+  opacity: 0.8;
 }
 
 .contact-buttons {
@@ -1289,6 +1380,11 @@ img, video {
 .footer-contact-icon {
   font-size: 1rem;
   color: var(--gjs-t-color-primary);
+  transition: transform 0.3s ease;
+}
+
+.footer-contact-item:hover .footer-contact-icon {
+  transform: scale(1.1);
 }
 
 .footer-phone-link {
@@ -1555,6 +1651,10 @@ img, video {
     line-height: 1.6;
   }
 
+  .experience-subtitle, .about-subtitle {
+    font-size: 1.125rem;
+  }
+
   .hero-ctas, .equipment-ctas, .contact-buttons {
     flex-wrap: wrap;
     gap: 0.75rem;
@@ -1608,6 +1708,10 @@ img, video {
 
   .experience-stats {
     grid-template-columns: 1fr;
+  }
+
+  .experience-subtitle, .about-subtitle {
+    font-size: 1rem;
   }
 }
 
@@ -1693,7 +1797,7 @@ img, video {
 /* Ajustes para logo */
 .brand-icon, .footer-brand-icon {
   width: auto;
-  height: 48px; /* Escala razonable del original 2624x480 */
+  height: 48px;
 }
 
 /* Transiciones suaves para elementos */
@@ -1719,23 +1823,23 @@ img:hover {
   top: 0;
   width: 100%;
   z-index: 999;
-  background-color: #3d4045; /* Color gris oscuro especificado */
+  background-color: #3d4045;
 }
 
 /* Añadir padding superior a las secciones para compensar header fijo */
 section {
-  scroll-margin-top: 100px; /* Margen general para secciones */
+  scroll-margin-top: 100px;
 }
 
 #inicio {
-  scroll-margin-top: 200px; /* Mayor margen para la sección Inicio */
+  scroll-margin-top: 200px;
 }
 
 @media (max-width: 768px) {
   section {
-    scroll-margin-top: 80px; /* Menor offset para móviles */
+    scroll-margin-top: 80px;
   }
   #inicio {
-    scroll-margin-top: 150px; /* Mayor margen para Inicio en móviles */
+    scroll-margin-top: 150px;
   }
 }
